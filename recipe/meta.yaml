@@ -1,5 +1,5 @@
 {% set name = "pyqg" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/pyqg/pyqg/archive/v{{ version }}.tar.gz
-  sha256: c8b4a138ead7ad3b4966e91926ccaee3623dc078e697866cbe0b72116e3d687c
+  sha256: 7d008aeceb9e1d19973694f1c219f21d01fc6896a3f7101a939c4b8620922751
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -60,8 +60,8 @@ about:
     to geophysical fluid dynamics problems.
   doc_url: https://pyqg.readthedocs.io/en/latest/
   dev_url: https://github.com/pyqg/pyqg
- 
+
 extra:
   recipe-maintainers:
-  - rabernat
-  - mfjansen
+    - rabernat
+    - mfjansen
