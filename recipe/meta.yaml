@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/pyqg/pyqg/archive/v{{ version }}.tar.gz
-  sha256: 7d008aeceb9e1d19973694f1c219f21d01fc6896a3f7101a939c4b8620922751
+  sha256: 216c5fb84da62166c75e4b7a7c61c5b5a7cdcd43511ac7d8b2977c1be18cf0ca
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
