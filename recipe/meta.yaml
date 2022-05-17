@@ -1,5 +1,5 @@
 {% set name = "pyqg" %}
-{% set version = "0.5.0" %}
+{% set version = "0.7.1" %}
 
 
 package:
@@ -8,28 +8,37 @@ package:
 
 source:
   url: https://github.com/pyqg/pyqg/archive/v{{ version }}.tar.gz
-  sha256: d8de762307e24a59a774e9fe33bf241713611ad93569ec532de6fa08d972e7ee
+  sha256: db28bc00e42ea5649372ee2a4ad6a29b38eb145cebdb621c140f778cb79728bc
 
 build:
   number: 0
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{version}}
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - libgomp  # [linux]
   host:
     - python
     - pip
     - cython
+    - setuptools
     - numpy
     - pyfftw
+    - setuptools_scm[toml] >=6.2
+    - importlib_metadata
+    - wheel
   run:
     - python
     - pyfftw
     - {{ pin_compatible('numpy') }}
     - libgomp  # [linux]
-
 test:
   source_files:
     - pyqg/tests
