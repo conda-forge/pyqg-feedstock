@@ -18,10 +18,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - libgomp  # [linux]
+    - cython
   host:
     - python
     - pip
-    - cython
     - numpy
     - pyfftw
   run:
@@ -29,7 +29,6 @@ requirements:
     - pyfftw
     - {{ pin_compatible('numpy') }}
     - libgomp  # [linux]
-
 test:
   source_files:
     - pyqg/tests
