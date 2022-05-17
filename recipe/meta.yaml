@@ -19,7 +19,7 @@ requirements:
     - {{ compiler('c') }}
     - libgomp  # [linux]
     - importlib_metadata
-    - oldest-supported-numpy
+    - numpy
     - setuptools_scm[toml] >=6.2
   host:
     - python
