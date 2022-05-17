@@ -20,7 +20,7 @@ requirements:
     - libgomp  # [linux]
     - importlib_metadata
     - oldest-supported-numpy
-    - setuptools_scm[toml]>=6.2
+    - setuptools_scm[toml] >=6.2
   host:
     - python
     - pip
