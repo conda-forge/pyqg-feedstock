@@ -1,5 +1,5 @@
 {% set name = "pyqg" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/pyqg/pyqg/archive/v{{ version }}.tar.gz
-  sha256: d8de762307e24a59a774e9fe33bf241713611ad93569ec532de6fa08d972e7ee
+  sha256: 9e5a1185fc1f2d73b5fea0a0bf73c11a12a50d50e11501bacb7ae5183c2173ce
 
 build:
   number: 0
