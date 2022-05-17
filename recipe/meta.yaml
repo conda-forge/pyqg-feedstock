@@ -11,9 +11,9 @@ source:
   sha256: db28bc00e42ea5649372ee2a4ad6a29b38eb145cebdb621c140f778cb79728bc
 
 build:
-  number: 0
+  number: 1
   script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{version}}
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
