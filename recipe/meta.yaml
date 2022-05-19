@@ -1,5 +1,5 @@
 {% set name = "pyqg" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://github.com/pyqg/pyqg/archive/v{{ version }}.tar.gz
-  sha256: db28bc00e42ea5649372ee2a4ad6a29b38eb145cebdb621c140f778cb79728bc
+  sha256: bd20c87b8bf5e3a8a8557e11eb5d77e3a2e0ce8cb99130ad8f56819d0062fcba
 
 build:
   number: 0
   script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{version}}
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
