@@ -11,7 +11,7 @@ source:
   sha256: bd20c87b8bf5e3a8a8557e11eb5d77e3a2e0ce8cb99130ad8f56819d0062fcba
 
 build:
-  number: 0
+  number: 1
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
@@ -20,14 +20,14 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
+    - cython <3                              # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - libgomp  # [linux]
   host:
     - python
     - pip
-    - cython
+    - cython <3
     - setuptools
     - numpy
     - pyfftw
